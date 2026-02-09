@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "streamlit-javascript"
+version = "1.42.0"
+description = "component to run javascript code in streamlit application"
+readme = "README.md"
+requires-python = ">=3.9, !=3.9.7"
+license = { text = "MIT License" }
+authors = [
+  { name = "Alexander Balasch & Strings" }
+]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "streamlit >= 1.42.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/thunderbug1/streamlit-javascript"
+
+[tool.hatch.build]
+include = [
+  "streamlit_javascript/**",
+  "README.md",
+]
+exclude = [
+  "streamlit_javascript/frontend/node_modules/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["streamlit_javascript"]
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
+
+
