@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/thunderbug1/streamlit-javascript"
+Homepage = "https://github.com/ckosmic/streamlit-javascript"
 
 [tool.hatch.build]
 include = [
