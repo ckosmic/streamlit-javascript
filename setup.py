@@ -74,7 +74,7 @@ class BuildFrontend(setuptools.Command):
                     )
                 elif pkg_desc["version"] != STREAMLIT_VERSION:
                     self.msg_log(
-                        f"WARNING\xe2\x9a\xa0: package.json:version should be {STREAMLIT_VERSION} not {pkg_desc["version"]}"
+                        f"WARNING\xe2\x9a\xa0: package.json:version should be {STREAMLIT_VERSION} not {pkg_desc['version']}"
                     )
             except json.decoder.JSONDecodeError as exc:
                 self.msg_log("Unable to read package.JSON file - syntax error")
