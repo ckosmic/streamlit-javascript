@@ -9,7 +9,7 @@ from setuptools.command.build_py import build_py
 
 PACKAGE_MGR = "npm"
 PACKAGE_DIR = os.path.dirname(__file__)
-PACKAGE_NAME = "streamlit-javascript"
+PACKAGE_NAME = "pantheon-streamlit-javascript"
 STREAMLIT_VERSION = "1.42.0"  # PEP-440
 
 
@@ -39,7 +39,7 @@ class BuildFrontend(setuptools.Command):
 
     def finalize_options(self) -> None:
         self.frontend_dir = os.path.join(
-            PACKAGE_DIR, "streamlit_javascript", "frontend"
+            PACKAGE_DIR, "pantheon_streamlit_javascript", "frontend"
         )
         self.modules_dir = os.path.join(self.frontend_dir, "node_modules")
         self.build_dir = os.path.join(self.frontend_dir, "build")

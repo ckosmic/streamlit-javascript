@@ -10,7 +10,7 @@ from subprocess import CompletedProcess
 from hatchling.builders.hooks.plugin.interface import BuildHookInterface
 
 PACKAGE_MGR = "npm"
-PACKAGE_NAME = "streamlit-javascript"
+PACKAGE_NAME = "pantheon-streamlit-javascript"
 STREAMLIT_VERSION = "1.42.0"  # PEP-440
 PACKAGE_DIR = Path(__file__).resolve().parent
 
@@ -38,7 +38,7 @@ class BuildFrontendHook(BuildHookInterface):
             os.chdir(original_directory)
 
     def _run(self) -> None:
-        self.frontend_dir = PACKAGE_DIR / "streamlit_javascript" / "frontend"
+        self.frontend_dir = PACKAGE_DIR / "pantheon_streamlit_javascript" / "frontend"
         self.modules_dir = self.frontend_dir / "node_modules"
         self.build_dir = self.frontend_dir / "build"
 
