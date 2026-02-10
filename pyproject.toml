@@ -34,12 +34,14 @@ include = [
   "streamlit_javascript/**",
   "README.md",
 ]
-exclude = [
-  "streamlit_javascript/frontend/node_modules/**",
-]
 
 [tool.hatch.build.targets.wheel]
 packages = ["streamlit_javascript"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"streamlit_javascript/frontend/build" = "streamlit_javascript/frontend/build"
+"streamlit_javascript/frontend/node_modules" = "streamlit_javascript/frontend/node_modules"
+"streamlit_javascript/frontend/package-lock.json" = "streamlit_javascript/frontend/package-lock.json"
 
 [tool.hatch.build.hooks.custom]
 path = "hatch_build.py"
