@@ -1,4 +1,5 @@
 import os
+from uuid import uuid4
 from typing import Any
 import streamlit.components.v1 as components
 from streamlit.runtime.state.common import WidgetCallback
@@ -21,7 +22,7 @@ _component_func_url = components.declare_component(
 def st_javascript(
     js_code: str,
     default: Any = 0,
-    key: str | None = None,
+    key: str | None = str(uuid4()),
     poll: int = 0,
     on_change: WidgetCallback | None = None,
     _use_url=False,
